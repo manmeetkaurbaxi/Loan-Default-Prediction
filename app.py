@@ -17,7 +17,7 @@ logging.getLogger("streamlit").setLevel(logging.ERROR)
 warnings.filterwarnings('ignore', category=UserWarning, message='.*?pyplot.*?')
 
 def load_model():
-    with open('Output/xgboost_model.pkl', 'rb') as file:
+    with open('xgboost_model.pkl', 'rb') as file:
         return pickle.load(file)
     
 def main():
