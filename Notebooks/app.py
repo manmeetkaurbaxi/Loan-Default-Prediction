@@ -30,7 +30,7 @@ def main():
     # Data Loading Section with Progress Bar
     if 'data' not in st.session_state:
         with st.spinner('Loading raw data...'):
-            path = '../Input/raw/Credit_Risk_Dataset.xlsx'
+            path = 'https://github.com/manmeetkaurbaxi/Loan-Default-Prediction/blob/main/Input/raw/Credit_Risk_Dataset.xlsx'
             sheet_names = ['loan_information', 'Employment', 'Personal_information', 'Other_information']
             
             dfs = read_excel_data(path, sheet_names)
@@ -52,7 +52,7 @@ def main():
     # Load cleaned data and model if not in session state
     if 'cleaned_data' not in st.session_state or 'model' not in st.session_state:
         with st.spinner('Loading cleaned data and model...'):
-            st.session_state['cleaned_data'] = pd.read_excel('../Input/cleaned/CleanedData.xlsx')
+            st.session_state['cleaned_data'] = pd.read_excel('https://github.com/manmeetkaurbaxi/Loan-Default-Prediction/blob/main/Input/cleaned/CleanedData.xlsx')
             st.session_state['model'] = load_model()
             st.success("Cleaned data and model loaded successfully!")
     
